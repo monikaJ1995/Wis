@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-19T18:35:46 IST" name="Default suite" finished-at="2022-05-19T18:36:05 IST" duration-ms="18840">
+    <groups>
+    </groups>
+    <test started-at="2022-05-19T18:35:46 IST" name="Default test" finished-at="2022-05-19T18:36:05 IST" duration-ms="18840">
+      <class name="com.qa.testLayer.Test1">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-19T18:35:46 IST" name="setup" finished-at="2022-05-19T18:36:05 IST" duration-ms="18626" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="CreateThisTaskButtonColorTest()[pri:5, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-19T18:36:05 IST" name="CreateThisTaskButtonColorTest" finished-at="2022-05-19T18:36:05 IST" duration-ms="33" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateThisTaskButtonColorTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-19T18:36:05 IST" name="tearDown" finished-at="2022-05-19T18:36:05 IST" duration-ms="148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.testLayer.Test1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
