@@ -2,20 +2,20 @@
 <testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-19T18:35:46 IST" name="Default suite" finished-at="2022-05-19T18:36:05 IST" duration-ms="18840">
+  <suite started-at="2022-05-20T02:42:06 IST" name="Default suite" finished-at="2022-05-20T02:42:22 IST" duration-ms="15305">
     <groups>
     </groups>
-    <test started-at="2022-05-19T18:35:46 IST" name="Default test" finished-at="2022-05-19T18:36:05 IST" duration-ms="18840">
+    <test started-at="2022-05-20T02:42:06 IST" name="Default test" finished-at="2022-05-20T02:42:22 IST" duration-ms="15305">
       <class name="com.qa.testLayer.Test1">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-19T18:35:46 IST" name="setup" finished-at="2022-05-19T18:36:05 IST" duration-ms="18626" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-20T02:42:06 IST" name="setup" finished-at="2022-05-20T02:42:21 IST" duration-ms="14942" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="CreateThisTaskButtonColorTest()[pri:5, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-19T18:36:05 IST" name="CreateThisTaskButtonColorTest" finished-at="2022-05-19T18:36:05 IST" duration-ms="33" status="PASS">
+        <test-method signature="TaskNameTextBoxTest()[pri:2, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-20T02:42:21 IST" name="TaskNameTextBoxTest" finished-at="2022-05-20T02:42:21 IST" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateThisTaskButtonColorTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-19T18:36:05 IST" name="tearDown" finished-at="2022-05-19T18:36:05 IST" duration-ms="148" status="PASS">
+        </test-method> <!-- TaskNameTextBoxTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.testLayer.Test1@9353778]" started-at="2022-05-20T02:42:21 IST" name="tearDown" finished-at="2022-05-20T02:42:22 IST" duration-ms="287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -13,12 +13,16 @@ public class Test1 extends TestBase {
 	WishupLogInWebPage Test1;
 	WishupCreateNewTaskWebPage create;
 	
+	Test1()
+	{
+		super();
+	}
 	@BeforeMethod
 	public void setup()
 	{
 		launch("chrome");
 		Test1 = new WishupLogInWebPage();
-		Test1.verifyLogin("wishup_testuser1@gmail.com","testpw1");
+		Test1.verifyLogin(prop.getProperty("userName"),prop.getProperty("password"));
 		create = new WishupCreateNewTaskWebPage();
 		create.verifyAdd_A_TaskButton();
 	}
