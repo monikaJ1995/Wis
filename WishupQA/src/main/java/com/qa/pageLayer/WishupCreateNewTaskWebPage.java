@@ -5,6 +5,8 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.qa.utility.TestBase;
+
 
 public class WishupCreateNewTaskWebPage extends TestBase  {
 	@FindBy(xpath="//a[contains(@class,'create_task_button')]")
