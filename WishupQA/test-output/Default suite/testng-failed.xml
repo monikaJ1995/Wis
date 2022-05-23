@@ -5,7 +5,7 @@
     <classes>
       <class name="com.qa.testLayer.Test1">
         <methods>
-          <include name="TaskNameTextBoxTest"/>
+          <include name="TestUser1_Btn_Test"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>

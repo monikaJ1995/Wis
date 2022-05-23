@@ -9,8 +9,7 @@ import com.qa.utility.TestBase;
 
 
 public class WishupCreateNewTaskWebPage extends TestBase  {
-	@FindBy(xpath="//a[contains(@class,'create_task_button')]")
-	private WebElement add_A_task;
+	
 
 	@FindBy(xpath="(//input[contains(@name,'name')])[2]")
 	private WebElement task_Name;
@@ -23,16 +22,16 @@ public class WishupCreateNewTaskWebPage extends TestBase  {
 	
 	@FindBy(xpath= "(//input[contains(@checked,'true')])[2]")
 	private WebElement radioBtn_OneTime;
+	
+	@FindBy(xpath="(//div[contains(text(),'Test User 1')])[2]")
+	private WebElement testUser_btn;
 
 	public WishupCreateNewTaskWebPage()
 	{
 		PageFactory.initElements(driver, this);
 	}
 
-	public void verifyAdd_A_TaskButton()
-	{
-			add_A_task.click();
-	}
+	
 	public boolean verifyTaskNameTextBox()
 	{
 
@@ -57,6 +56,13 @@ public class WishupCreateNewTaskWebPage extends TestBase  {
 	{
 		String bkcolor = CreateTask.getCssValue("background-color");
 		return Color.fromString(bkcolor).asHex();
+	}
+	public boolean verifyTestUser1Button()
+	{
+		testUser_btn.click();
+		
+		return testUser_btn.isSelected();
+		
 	}
 	
 	
