@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.testLayer.Test1">
+      <class name="simpleClassLayer.Test1_forExtentReport">
         <methods>
-          <include name="TestUser1_Btn_Test"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="Test3"/>
+          <include name="extentSetup"/>
+          <include name="Test1"/>
+          <include name="extentTearDown"/>
+          <include name="extentTearDown"/>
         </methods>
-      </class> <!-- com.qa.testLayer.Test1 -->
+      </class> <!-- simpleClassLayer.Test1_forExtentReport -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
