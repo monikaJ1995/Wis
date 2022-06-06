@@ -5,18 +5,23 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class CurrentSystemDate {
-	SimpleDateFormat dateFormatter;
-	Calendar calendar;
-	public String currentDate()//--method name
-	{
-		
+public class SystemDate {
+	static SimpleDateFormat dateFormatter;
+	static Calendar calendar;
+	public static String currentDate_Time()//--method name
+	{	
+		dateFormatter = new SimpleDateFormat("dd-MMM-yyyy_hh-mm-ss-SSS");	
+		calendar = Calendar.getInstance();
+		Date currentDateTime = calendar.getTime();
+		return dateFormatter.format(currentDateTime);			
+	}
+	public static String currentDate()//--method name
+	{	
 		dateFormatter = new SimpleDateFormat("MMM dd, yyyy");	
 		calendar = Calendar.getInstance();
 		Date currentDateTime = calendar.getTime();
 		//System.out.println(dateFormatter.format(currentDateTime));
-		return dateFormatter.format(currentDateTime);
-				
+		return dateFormatter.format(currentDateTime);			
 	}
 	public String pastDate(int past_daysCnt)
 	{

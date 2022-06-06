@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.qa.utility.TestBase;
+import com.qa.base.TestBase;
 
 
 public class WishupCreateNewTaskWebPage extends TestBase  {

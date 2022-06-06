@@ -3,6 +3,7 @@ package com.qa.utility;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -12,15 +13,16 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtility {
-		public FileInputStream fi;
-		public FileOutputStream fo;
-		public XSSFWorkbook workbook;
-		public XSSFSheet sheet;
-		public XSSFRow row;
-		public XSSFCell cell;
-		public CellStyle style;   
-		String path;
-		
+		public static FileInputStream fi;
+		public static FileOutputStream fo;
+		public static XSSFWorkbook workbook;
+		public static XSSFSheet sheet;
+		public static XSSFRow row;
+		public static XSSFCell cell;
+		public static CellStyle style;   
+		String path ;
+		int rowcount;
+		String data;
 		public ExcelUtility(String path)
 		{
 			this.path=path;
@@ -31,7 +33,7 @@ public class ExcelUtility {
 			fi=new FileInputStream(path);
 			workbook=new XSSFWorkbook(fi);
 			sheet=workbook.getSheet(sheetName);
-			int rowcount=sheet.getLastRowNum();
+			rowcount=sheet.getLastRowNum();
 			workbook.close();
 			fi.close();
 			return rowcount;		
@@ -72,5 +74,7 @@ public class ExcelUtility {
 			fi.close();
 			return data;
 		}
+		
+
 
 }

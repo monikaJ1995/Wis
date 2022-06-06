@@ -14,14 +14,14 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.qa.base.TestBase;
 import com.qa.pageLayer.WishupLogInWebPage;
-import com.qa.utility.TestBase;
+import com.qa.utility.Extent_Utility;
 
 public class WishupLoginTest_DataProvider extends TestBase{
 
 	WishupLogInWebPage login;
 	ExtentReports extent;
-	ExtentSparkReporter spark;
 	ExtentTest test;
 	
 	WishupLoginTest_DataProvider()
@@ -38,15 +38,7 @@ public class WishupLoginTest_DataProvider extends TestBase{
 	@BeforeSuite
 	public void extentSetup()
 	{
-		extent = new ExtentReports();
-		spark = new ExtentSparkReporter("./extent_reports/LoginTestWithDataprovider.html");
-		spark.config().setReportName("WishupLoginWebpage");
-		spark.config().setDocumentTitle("Automation Report");
-		spark.config().setTheme(Theme.DARK);
-		extent.attachReporter(spark);
-		extent.setSystemInfo("OS","Windows");
-		extent.setSystemInfo("Tester", "Monika J");
-		
+		extent = Extent_Utility.extentReport("Login Test using Dataprovider");
 	}
 	
 	@Test(priority=11,dataProvider = "ValidTestData")
@@ -57,7 +49,6 @@ public class WishupLoginTest_DataProvider extends TestBase{
 		Assert.assertNotEquals(login.verifyLogin(UserName, Password, status),prop.getProperty("AddATask_bttn"));
 	}
 	
-	
 	@Test(priority=12,dataProvider = "InvalidTestData")
 	public void invalidDataLoginTest(String UserName, String Password, String status)
 	{
@@ -65,7 +56,6 @@ public class WishupLoginTest_DataProvider extends TestBase{
 		//System.out.println(login.verifyLogin(UserName, Password));
 		Assert.assertEquals(login.verifyLogin(UserName, Password, status),prop.getProperty("loginPageUrl"));
 	}
-	
 	
 	@AfterMethod
 	public void tearDown(ITestResult result)

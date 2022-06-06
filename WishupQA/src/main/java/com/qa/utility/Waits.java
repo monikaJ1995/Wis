@@ -4,7 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SynchronizationWaits extends TestBase{
+import com.qa.base.TestBase;
+
+public class Waits extends TestBase{
 	WebDriverWait wait = new WebDriverWait(driver, 30);
 	
 	public WebElement explicit_Wait(WebElement element)

@@ -5,17 +5,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.qa.base.TestBase;
 import com.qa.pageLayer.WishupCreateNewTaskWebPage;
 import com.qa.pageLayer.WishupHomePage;
 import com.qa.pageLayer.WishupLogInWebPage;
-import com.qa.utility.CurrentSystemDate;
-import com.qa.utility.TestBase;
+import com.qa.utility.SystemDate;
 
 public class WishupCreateNewTaskTest extends TestBase {
 	WishupLogInWebPage Test1;
 	WishupCreateNewTaskWebPage create;
 	WishupHomePage homePage;
-	CurrentSystemDate currentDate;
+	SystemDate currentDate;
 
 	WishupCreateNewTaskTest()
 	{
@@ -30,7 +30,7 @@ public class WishupCreateNewTaskTest extends TestBase {
 		create = new WishupCreateNewTaskWebPage();
 		homePage = new WishupHomePage();
 		homePage.verifyAdd_A_TaskButton();
-		currentDate = new CurrentSystemDate();
+		currentDate = new SystemDate();
 	}
 	
 	//Task Name text box is enabled or not

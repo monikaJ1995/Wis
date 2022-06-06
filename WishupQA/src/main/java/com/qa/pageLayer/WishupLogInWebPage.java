@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.qa.utility.SynchronizationWaits;
-import com.qa.utility.TestBase;
+import com.qa.base.TestBase;
+import com.qa.utility.Waits;
 
 public class WishupLogInWebPage extends TestBase{
-	SynchronizationWaits sync ;
+	Waits sync ;
 	@FindBy(xpath="//input[@name='email']")
 	private WebElement EmailAddress;
 
@@ -31,16 +31,14 @@ public class WishupLogInWebPage extends TestBase{
 
 	public WishupLogInWebPage()
 	{
-
 		PageFactory.initElements(driver, this);
-		sync = new SynchronizationWaits();
+		sync = new Waits();
 	}
 
 	public void dropdown()
 	{
 		test_Dropdown.click();
 		sync.explicit_Wait(logout).click();
-		//logout.click();
 	}
 	
 	
@@ -56,7 +54,7 @@ public class WishupLogInWebPage extends TestBase{
 		{
 			returnStatus = add_A_task.getText();
 			test_Dropdown.click();
-			sync.explicit_Wait(logout).click();
+			sync.explicit_Wait(logout).click();		//------sync: explicit wait for element to be clickable
 		}
 		else if(status.equalsIgnoreCase("invalid"))
 		{

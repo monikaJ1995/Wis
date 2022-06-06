@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.qa.utility.TestBase;
+import com.qa.base.TestBase;
 
 public class WishupHomePage extends TestBase {
 	@FindBy(xpath="//a[contains(@class,'create_task_button')]")

@@ -18,14 +18,14 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.qa.base.TestBase;
 import com.qa.pageLayer.WishupLogInWebPage;
-import com.qa.utility.TestBase;
+import com.qa.utility.Extent_Utility;
 
 public class WishupLoginTest_PropFile extends TestBase{
 	WishupLogInWebPage login;
 	Properties prop_TD;
 	ExtentReports extent;
-	ExtentSparkReporter spark;
 	ExtentTest test;
 	WishupLoginTest_PropFile()
 	{
@@ -42,15 +42,7 @@ public class WishupLoginTest_PropFile extends TestBase{
 	@BeforeSuite
 	public void extentSetup()
 	{
-		extent = new ExtentReports();
-		spark = new ExtentSparkReporter("./extent_reports/LoginTestWithPropertiesFile.html");
-		spark.config().setReportName("WishupLoginWebpage");
-		spark.config().setDocumentTitle("Automation Report");
-		spark.config().setTheme(Theme.DARK);
-		extent.attachReporter(spark);
-		extent.setSystemInfo("OS","Windows");
-		extent.setSystemInfo("Tester", "Monika J");
-		
+		extent = Extent_Utility.extentReport("Login Test With Properties File");	
 	}
 	@BeforeMethod
 	public void setup()
@@ -66,7 +58,7 @@ public class WishupLoginTest_PropFile extends TestBase{
 	{
 		test = extent.createTest("Test for Login functionality with invalid credentials via Properties file");
 		String validation1 = login.verifyLogin(prop_TD.getProperty("invalid_userName1"), prop_TD.getProperty("invalid_pwd1"), "invalid");
-		Assert.assertEquals(validation1, prop.getProperty("loginPageUrl"));
+		Assert.assertNotEquals(validation1, prop.getProperty("loginPageUrl"));
 		test.log(Status.PASS, "User failed to login with invalid credentials");
 		String validation2 = login.verifyLogin(prop_TD.getProperty("invalid_userName2"), prop_TD.getProperty("invalid_pwd2"), "invalid");
 		Assert.assertEquals(validation2, prop.getProperty("loginPageUrl"));
@@ -97,15 +89,15 @@ public class WishupLoginTest_PropFile extends TestBase{
 	@AfterMethod
 	public void tearDown(ITestResult result)
 	{
-		 if (result.getStatus() == ITestResult.FAILURE) {
-			   test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getName()); // to add name in extent report
-			   test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getThrowable()); // to add error/exception in extent report
-			  } else if (result.getStatus() == ITestResult.SKIP) {
-			   test.log(Status.SKIP, "Test Case SKIPPED IS " + result.getName());
-			  }
-			  else if (result.getStatus() == ITestResult.SUCCESS) {
-			   test.log(Status.PASS, "Test Case PASSED IS " + result.getName());
-			  }
+		if (result.getStatus() == ITestResult.FAILURE) {
+			test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getName()); // to add name in extent report
+			test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getThrowable()); // to add error/exception in extent report
+		} else if (result.getStatus() == ITestResult.SKIP) {
+			test.log(Status.SKIP, "Test Case SKIPPED IS " + result.getName());
+		}
+		else if (result.getStatus() == ITestResult.SUCCESS) {
+			test.log(Status.PASS, "Test Case PASSED IS " + result.getName());
+		}
 	}
 	@AfterClass
 	public void driverTearDown()

@@ -12,33 +12,23 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.qa.pageLayer.WishupLogInWebPage;
+import com.qa.utility.Extent_Utility;
 
 public class Test1_forExtentReport {
 
-	WishupLogInWebPage login;
-	ExtentSparkReporter spark;
-	ExtentReports extent;
 	ExtentTest test;
-	
+	ExtentReports extent;
 	
 	@BeforeSuite
 	public void extentSetup()
 	{
-		spark = new ExtentSparkReporter("./extent_reports/SimpleExtentReport_withAssertion.html");
-		spark.config().setTheme(Theme.STANDARD);
-		spark.config().setReportName("AssertionTest");
-		spark.config().setDocumentTitle("SimpleExtentReport");
-		extent = new ExtentReports();
-		extent.attachReporter(spark);
-		extent.setSystemInfo("Tester", "Monika J.");
-		extent.setSystemInfo("OS", "Windows 11");
-	}
-	
+		extent = Extent_Utility.extentReport("Login WebPage Test");
+	}	
 	@Test
 	public void Test1()
 	{
 		test = extent.createTest("NOT-OK Test with assert True");
-			Assert.assertFalse(true);
+		Assert.assertFalse(false);
 	}
 	@Test
 	public void Test2()

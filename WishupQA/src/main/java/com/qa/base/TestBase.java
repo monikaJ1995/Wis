@@ -1,4 +1,4 @@
-package com.qa.utility;
+package com.qa.base;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.asserts.SoftAssert;
 
 import com.qa.testData.TestData_UsingDataProvider;
 

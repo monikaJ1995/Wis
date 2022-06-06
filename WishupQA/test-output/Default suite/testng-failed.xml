@@ -3,15 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="simpleClassLayer.Test1_forExtentReport">
+      <class name="com.qa.LoginPageTest.WishupLoginTest_DataProvider">
         <methods>
-          <include name="Test3"/>
           <include name="extentSetup"/>
-          <include name="Test1"/>
-          <include name="extentTearDown"/>
-          <include name="extentTearDown"/>
+          <include name="validDataLoginTest" invocation-numbers="0 1 2"/>
+          <include name="driverTearDown"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="extentReportTearDown"/>
         </methods>
-      </class> <!-- simpleClassLayer.Test1_forExtentReport -->
+      </class> <!-- com.qa.LoginPageTest.WishupLoginTest_DataProvider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

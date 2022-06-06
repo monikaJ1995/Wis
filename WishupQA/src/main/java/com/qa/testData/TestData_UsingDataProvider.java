@@ -39,15 +39,13 @@ public class TestData_UsingDataProvider {
 		int totalcols=xlutil.getCellCount("Sheet1",1);	
 				
 		String loginData[][]=new String[totalrows][totalcols];
-			
-		
+				
 		for(int i=1;i<=totalrows;i++) //1
 		{
 			for(int j=0;j<totalcols;j++) //0
 			{
 				loginData[i-1][j]=xlutil.getCellData("Sheet1", i, j);
-			}
-				
+			}	
 		}
 		
 		return loginData;

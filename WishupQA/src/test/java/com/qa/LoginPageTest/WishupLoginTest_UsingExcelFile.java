@@ -1,6 +1,5 @@
 package com.qa.LoginPageTest;
 
-import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -8,37 +7,30 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
+import org.testng.asserts.SoftAssert;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.qa.base.TestBase;
 import com.qa.pageLayer.WishupLogInWebPage;
-import com.qa.utility.TestBase;
+import com.qa.utility.Extent_Utility;
 
 public class WishupLoginTest_UsingExcelFile extends TestBase{
 	WishupLogInWebPage login;
-	ExtentSparkReporter spark;
 	ExtentReports extent;
 	ExtentTest test;
+	SoftAssert Assert;
 	
 	WishupLoginTest_UsingExcelFile()
 	{
 		super();
+		Assert = new SoftAssert();
 	}
 	
 	@BeforeSuite
 	public void extentSetup()
 	{
-		spark = new ExtentSparkReporter("./extent_reports/LoginTestWithExcelFile.html");
-		spark.config().setTheme(Theme.STANDARD);
-		spark.config().setReportName("Wishup Login Test with Excel");
-		spark.config().setDocumentTitle("Log in Webpage Test using Excel File");
-		extent = new ExtentReports();
-		extent.attachReporter(spark);
-		extent.setSystemInfo("Tester", "Monika J.");
-		extent.setSystemInfo("OS", "Windows 11");
+		extent = Extent_Utility.extentReport("Login Test Using Excel File");
 	}
 	
 	@BeforeClass
@@ -54,14 +46,16 @@ public class WishupLoginTest_UsingExcelFile extends TestBase{
 		test = extent.createTest("Wishup Login Test with Excel file");
 		String returnData =login.verifyLogin(username, pwd, status);
 		//System.out.println(login.verifyLogin(username, pwd, status));
-		if(returnData.equalsIgnoreCase(prop.getProperty("AddATask_bttn"))||returnData.equalsIgnoreCase(prop.getProperty("loginPageUrl")))
+		if(status.equalsIgnoreCase("valid"))
 		{
-			Assert.assertTrue(true);
+			Assert.assertEquals(returnData,prop.getProperty("AddATask_bttn"),"Test case failed with valid credentials, check with DEV");
 		}
-		else
+
+		else if(status.equalsIgnoreCase("invalid"))
 		{
-			Assert.assertFalse(false);
+			Assert.assertEquals(returnData,prop.getProperty("loginPageUrl","Test case failed with valid credentials, check with DEV"));
 		}
+		Assert.assertAll();
 	}
 	@AfterMethod
 	public void extentTearDown(ITestResult result)
