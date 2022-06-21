@@ -35,28 +35,28 @@ public class WishupCreateNewTaskTest extends TestBase {
 	
 	//Task Name text box is enabled or not
 	@Test(priority=11)
-	public void TaskNameTextBoxTest()
+	public void taskNameTextBoxTest()
 	{
 		Assert.assertTrue(create.verifyTaskNameTextBox(), "Text Box is not enabled");
 	}
 
 	//Describe task text box is enabled or not
 	@Test(priority=12)
-	public void DescribeTaskTextBoxTest()
+	public void describeTaskTextBoxTest()
 	{		
 		Assert.assertTrue(create.verifyDescribeTaskTextBox(), "Text Box is not enabled");
 	}
 
 	//One-Time radio button is by default selected or not
 	@Test(priority=13)
-	public void OneTimeRadioButtonTest()
+	public void oneTimeRadioButtonTest()
 	{	
 		Assert.assertTrue(create.verifyOneTimeRadioButton(), "Radio button is not selected");	
 	}
 
 	//Verify "Create this task" button Background color
 	@Test(priority=14, enabled=true)
-	public void TestUser1_Btn_Test()
+	public void testUser1_Btn_Test()
 	{	
 		//Assert.assertEquals(create.verifyTestUser1Button(),"https://app-dev.wishup.co/images/selected_user.png");
 		System.out.println(create.verifyTestUser1Button());
@@ -64,14 +64,14 @@ public class WishupCreateNewTaskTest extends TestBase {
 
 	//Verify task creation with blank input cannot be done.
 	@Test(priority=15)
-	public void CreateThisTaskButtonTest()
+	public void createThisTaskButtonTest()
 	{	
 		Assert.assertNotEquals(create.verifyCreateThisTaskButton(),prop.getProperty("taskDetailsUrl"));
 	}
 	
 	//Verify "Create this task" button Background color
 	@Test(priority=16)
-	public void CreateThisTaskButtonBgrndColorTest()
+	public void createThisTaskButtonBgrndColorTest()
 	{	
 		Assert.assertEquals(create.verifyCreateThisTaskButtonBgrndColor(),prop.getProperty("CreateThisTaskButtonBgrndColor"));
 	}

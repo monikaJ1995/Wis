@@ -41,7 +41,7 @@ public class WishupLoginTest_UsingExcelFile extends TestBase{
 	}
 	
 	@Test(dataProvider="ExcelLoginData")
-	public void WishupLoginPageTest(String username, String pwd, String status)
+	public void wishupLoginPageTest(String username, String pwd, String status)
 	{
 		test = extent.createTest("Wishup Login Test with Excel file");
 		String returnData =login.verifyLogin(username, pwd, status);

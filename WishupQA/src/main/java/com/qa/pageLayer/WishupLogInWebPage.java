@@ -35,7 +35,7 @@ public class WishupLogInWebPage extends TestBase{
 		sync = new Waits();
 	}
 
-	public void dropdown()
+	public void verifyTestdropdown()
 	{
 		test_Dropdown.click();
 		sync.explicit_Wait(logout).click();

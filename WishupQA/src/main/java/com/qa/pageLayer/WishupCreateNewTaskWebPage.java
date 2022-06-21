@@ -53,7 +53,6 @@ public class WishupCreateNewTaskWebPage extends TestBase  {
 
 	public boolean verifyTaskNameTextBox()
 	{
-
 		return task_Name.isEnabled();	
 	}
 	public boolean verifyDescribeTaskTextBox()
@@ -63,7 +62,6 @@ public class WishupCreateNewTaskWebPage extends TestBase  {
 
 	public boolean verifyOneTimeRadioButton()
 	{
-
 		return radioBtn_OneTime.isSelected();
 	}
 	
